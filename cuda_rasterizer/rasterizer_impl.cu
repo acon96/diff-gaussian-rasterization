@@ -217,6 +217,7 @@ int CudaRasterizer::Rasterizer::forward(
 	float* out_color,
 	float* out_depth,
 	float* out_alpha,
+	int* is_used,
 	int* radii,
 	bool debug)
 {
@@ -333,7 +334,8 @@ int CudaRasterizer::Rasterizer::forward(
 		imgState.n_contrib,
 		background,
 		out_color,
-		out_depth), debug);
+		out_depth,
+	    is_used), debug);
 
 	return num_rendered;
 }
